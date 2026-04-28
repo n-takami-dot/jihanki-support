@@ -273,7 +273,7 @@
   <div class="sec-title">🆘 解決しない場合の連絡先</div>
   <div class="contact-item">
     <div class="contact-icon" style="background:#FFF9C4">👤</div>
-    <div><div class="contact-name">村上係長</div><div class="contact-desc">自己対応が困難な場合・手順書の手順を試しても解決しない場合にご連絡ください。</div><a href="tel:08047502043" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:var(--red);color:white;padding:8px 18px;border-radius:20px;font-size:0.75rem;font-weight:700;text-decoration:none;">📞 080-4750-2043</a></div>
+    <div><div class="contact-name">村上係長</div><div class="contact-desc">自己対応が困難な場合・手順書の手順を試しても解決しない場合にご連絡ください。</div><a href="tel:08047502043" style="display:inline-flex;align-items:center;gap:6px;margin-top:10px;background:var(--red);color:white;padding:8px 18px;border-radius:20px;font-size:0.75rem;font-weight:700;text-decoration:none;">📞 080-4750-2043</a><span class="contact-badge" style="margin-left:6px">エスカレーション先</span></div>
   </div>
   <div class="sec-title">🏭 メーカーサービス</div>
   <div class="contact-item">
@@ -418,7 +418,10 @@ function buildCard(e){
   return `<div class="result-card">
     <div class="result-header"><div class="code-box"><span class="code-box-lbl">CODE</span><span class="code-box-num">${e.code}</span></div><div class="result-meta"><div class="result-name">${e.name}</div>${e.status?`<span class="status-tag ${e.st}">${e.status}</span>`:''}</div></div>
     <div class="result-body"><div class="steps-lbl">対処手順</div><ul class="steps">${steps}</ul></div>
-    <div class="result-footer">${pdf}${pdf2}<div class="alert-box"><span style="flex-shrink:0">⚠️</span><span>解決しない場合は<strong style="margin:0 3px">村上係長</strong>にご連絡ください</span></div></div>
+    <div class="result-footer">${pdf}${pdf2}<div class="alert-box" style="flex-direction:column;align-items:flex-start;gap:10px;">
+  <div><span style="flex-shrink:0">⚠️</span> 解決しない場合は<strong style="margin:0 3px">村上係長</strong>にご連絡ください</div>
+  <a href="tel:08047502043" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--red);color:white;padding:12px 0;border-radius:30px;font-size:0.85rem;font-weight:700;text-decoration:none;width:100%;box-shadow:0 3px 8px rgba(232,25,44,0.25);">📞 080-4750-2043</a>
+</div></div>
   </div>`;
 }
 function toggleMaint(el){el.classList.toggle('open');}
